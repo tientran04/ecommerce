@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<div>
+    <span><a href="{{ url_for('main.womens_new_arrivals') }}">Women's New Arrivals</a></span>
+    <span>&ensp;&ensp;<a href="{{ url_for('main.mens_new_arrivals') }}">Men's New Arrivals</a></span>
+    <span>&ensp;&ensp;<a href="{{ url_for('main.kids_new_arrivals') }}">Kids's New Arrivals</a></span>
+</div>
+<hr>
+<div>
+    {% include "_products.html" %}
+</div>
+{% endblock %}

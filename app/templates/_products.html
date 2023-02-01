@@ -1,0 +1,8 @@
+<table>
+    {% for product in products %}
+    <tr>
+        <td><a href="{{ url_for('main.product_detail', product_name=product.name) }}">{{ product.name }} &ensp;</a></td>
+        <td>${{ product.price }}</td>
+    </tr>
+    {% endfor %}
+</table>

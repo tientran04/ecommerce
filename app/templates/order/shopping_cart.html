@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% if items %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set total = {"total": 0} %}
+        {% for item in items %}
+        {% set amount = item.quantity*item.product.price %}
+        {% if total.update({"total": total.total + amount }) %} {% endif %}
+        <tr>
+            <td> 
+                <p style="font-weight: bold">{{ item.product.name }}</p>
+                <p>{{ item.product.size }} US / {{ item.product.color }}</p>
+                <p style="font-weight: bold">${{ item.product.price }}</p>
+                <small>
+                    <a href="{{ url_for('order.remove_item', product_id=item.product.id) }}">Remove</a>
+                </small>
+            </td>
+            <td>{{ item.quantity }}</td>
+            
+            <td style="font-weight: bold">${{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody> 
+</table>
+<div>
+    <p style="font-weight: bold">Grand Total: ${{ total.total }} </p>
+    <a class="button button-md" href="{{ url_for('order.checkout') }}">Checkout</a>
+</div>
+
+{% else %}
+<div>
+    <p>Your cart is empty.</p>
+</div>
+{% endif %}
+{% endblock %}

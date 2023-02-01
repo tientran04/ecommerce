@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>My Account</h1>
+<div>
+    <h2>Account Details</h2>
+    <hr>
+    <p style="font-weight: bold">Name: {{ current_user.first_name }} {{ current_user.last_name }} </p>
+    <p>Email: {{ current_user.email }}</p>
+    <p>Mobile Number: {{ current_user.mobile_number }}</p>
+    <br>
+    <p><a href="{{ url_for('account.edit_details') }}">Edit details</a></p>
+    <p><a href="{{ url_for('account.update_password') }}">Update password</a></p>
+    <p><a href="{{ url_for('account.logout') }}">Logout</a></p>
+</div>
+<div>
+    <br>
+    <h2>Order History</h2>
+    <hr>
+    <p>Implement later</p>
+</div>
+<div>
+    <br>
+    <h2>Address Book</h2>
+    <p><a href="{{ url_for('account.add_address') }}">Add Address</a></p>
+    <hr>
+    <div>{% include "address/_address.html" %}</div>
+    <br>
+</div>
+{% endblock %}

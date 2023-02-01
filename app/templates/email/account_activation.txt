@@ -1,0 +1,10 @@
+Dear {{ user.first_name }},
+
+To activate your account click on the following link:
+
+{{ url_for("account.activation", token=token, _external=True) }}
+
+
+Sincerely,
+
+eCommerce

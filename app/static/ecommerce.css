@@ -1,0 +1,33 @@
+body {
+    background-color: #0b203f;
+}
+
+
+.banner {
+    background-color: #0b203f;
+    color: white;
+}
+
+.banner a:link {
+    color:white;
+    background-color: #0b203f;
+  }
+
+.banner a:visited {
+    color: white;
+    background-color: #0b203f;
+  }
+
+.banner a:hover {
+    color: white;
+    background-color: #0b203f;
+    text-decoration: underline;
+    fill: transparent
+  }
+
+.banner a:active {
+    color: white;
+    background-color: #0b203f;
+    text-decoration: underline;
+  }
+

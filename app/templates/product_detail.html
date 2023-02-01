@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}    
+<div class="row">
+    <div class="col-md-4">
+        <p>Product: {{ product.name }}</p>
+        <p>Price: ${{ product.price }}</p>
+        <p>{{ product.color }}</p>
+        <p>{{ product.size }}</p>
+        <form action="/add-to-bag" method="POST">
+            {{ wtf.quick_form(form) }}
+        </form>
+    </div>
+</div>
+{% endblock %}

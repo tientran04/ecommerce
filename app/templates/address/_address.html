@@ -1,0 +1,9 @@
+{% for address in current_user.addresses %}
+<div>
+    <p style="font-weight: bold">{{ address.first_name }} {{ address.last_name }}</p>
+    <p>{{ address.address }}</p>
+    <p>{{ address.mobile_number }}</p>
+</div>
+<p><a href="{{ url_for('account.edit_address', id=address.id) }}">Edit address</a></p>
+<br>
+{% endfor %}
