@@ -1,1 +1,1 @@
-web: flask db upgrade; gunicorn ecommerce:app
+web: python wsgi.py
